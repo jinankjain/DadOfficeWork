@@ -1,0 +1,35 @@
+{% include "base.html" %}
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <a href="/judge" class="navbar-brand">Bhairav Offset - Employee Management</a>
+            </div>    
+        </div>
+    </div>
+    <br><br><br>
+    <div class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="col-md-2"></div>
+            <div class="col-md-8">
+            	<table>
+  				<tr>
+  				  <th>Employee Name</th>
+  				  <th>Number of Working Hours</th>
+  				</tr>
+            	
+                {% for s in salary %}
+                	<tr>
+                		<td>{{s.employee.employeeName}}</td>
+                		<td>{{s.noOfHours}}</td>
+                	</tr>
+                	
+                {% endfor %}
+                </table>
+                
+            </div>
+            <div class="col-md-2"></div>
+    	</div>
+    </div>
+

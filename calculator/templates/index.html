@@ -1,0 +1,77 @@
+{% include "base.html" %}
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <a href="/judge" class="navbar-brand">Bhairav Offset - Employee Management</a>
+            </div>    
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <div class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h3> Upload Attendance Sheet </h3>
+                <form action="/submit" method="post" enctype="multipart/form-data">
+                    <label for="pwd">Date:</label>
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" name="date" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label for="pwd">Attendance File:</label>
+                        <input type="file" class="form-control-file" id="id_attend" name="attend" />
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+                <br>
+                <h3>View Attendance</h3>
+                <form action="/view" method="post">
+                    <label for="pwd">Salary From:</label>
+                    <div class='input-group date' id='datetimepicker2'>
+                        <input type='text' class="form-control" name="dateFrom" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    <br>
+                    <label for="pwd">Salary To:</label>
+                    <div class='input-group date' id='datetimepicker3'>
+                        <input type='text' class="form-control" name="dateTo" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                    <br><br>
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+    	</div>
+    </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker1').datetimepicker(
+            {
+                format: 'L'
+            });
+    });
+    $(function () {
+        $('#datetimepicker2').datetimepicker(
+            {
+                format: 'L'
+            });
+    });
+    $(function () {
+        $('#datetimepicker3').datetimepicker(
+            {
+                format: 'L'
+            });
+    });
+</script>

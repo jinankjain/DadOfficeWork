@@ -1,0 +1,49 @@
+{% include "base.html" %}
+
+<script type="text/javascript">
+    	var obj = {{ totalSalary|safe }}
+    	//obj = JSON.parse(obj);
+    	function getHours(employeeID)
+    	{
+    		document.write("<td>" + obj[employeeID] + " </td>");
+    	}
+    </script>
+
+
+
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+              <a href="/judge" class="navbar-brand">Bhairav Offset - Employee Management</a>
+            </div>    
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="container-fluid">
+    	<div class="row-fluid">
+    		<div class="col-md-2"></div>
+            <div class="col-md-8">
+            	<table>
+  				<tr>
+  				  <th>Employee Name</th>
+  				  <th>Number of Working Hours</th>
+  				</tr>
+            	
+                {% for e in employees %}
+                	<tr>
+                		<td>{{e.employeeName}}</td>
+                		<script type="text/javascript">
+                			getHours({{e.employeeId}});
+                		</script>
+                	</tr>
+                	
+                {% endfor %}
+                </table>
+                
+            </div>
+            <div class="col-md-2"></div>
+    	</div>
+    </div>
+
+    
